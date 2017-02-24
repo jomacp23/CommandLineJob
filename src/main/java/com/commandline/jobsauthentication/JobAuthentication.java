@@ -12,6 +12,8 @@ import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.protocol.ClientContext;
 import org.apache.http.protocol.ExecutionContext;
 import org.apache.http.protocol.HttpContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
@@ -19,6 +21,8 @@ import java.io.IOException;
  * Created by jose.m.cruz.perez on 24/02/2017.
  */
 public class JobAuthentication implements HttpRequestInterceptor{
+
+    private static Logger LOGGER = LoggerFactory.getLogger(JobAuthentication.class);
 
     public void process(HttpRequest request, HttpContext context) throws HttpException, IOException {
 
@@ -33,6 +37,7 @@ public class JobAuthentication implements HttpRequestInterceptor{
                 Credentials credentials = credentialsProvider
                     .getCredentials(new AuthScope(targetHost.getHostName(), targetHost.getPort()));
                 if (credentials == null) {
+                    LOGGER.error("Credenciales para la autentificacion no proporcionadas");
                     throw new HttpException("Credenciales para la autentificacion no proporcionadas");
                 }
                 authState.setAuthScheme(authScheme);
