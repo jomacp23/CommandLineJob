@@ -101,15 +101,17 @@
         </plugins>
     </build>
 
-    <!--
     <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>MTYTM17452YYZ-releases</name>
+            <url>http://localhost:8081/artifactory/local-build</url>
+        </repository>
         <snapshotRepository>
             <id>snapshots</id>
-            <layout>default</layout>
             <name>MTYTM17452YYZ-snapshots</name>
-            <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+            <url>http://localhost:8081/artifactory/local-build</url>
         </snapshotRepository>
     </distributionManagement>
-    -->
 
 </project>
