@@ -14,6 +14,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.version>4.11</junit.version>
+        <testng.version>6.8.17</testng.version>
+        <selenium.version>3.11.0</selenium.version>
+        <compiler.version>1.8</compiler.version>
     </properties>
 
     <dependencies>
@@ -55,5 +59,57 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${compiler.version}</source>
+                    <target>${compiler.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jfrog.buildinfo</groupId>
+                <artifactId>artifactory-maven-plugin</artifactId>
+                <version>2.2.1</version>
+                <inherited>false</inherited>
+                <executions>
+                    <execution>
+                        <id>build-info</id>
+                        <goals>
+                            <goal>publish</goal>
+                        </goals>
+                        <configuration>
+                            <deployProperties>
+                                <gradle>awesome</gradle>
+                                <review.team>qa</review.team>
+                            </deployProperties>
+                            <publisher>
+                                <contextUrl>https://oss.jfrog.org</contextUrl>
+                                <username>admin</username>
+                                <password>Manolo23_</password>
+                                <repoKey>libs-release-local</repoKey>
+                                <snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>
+                            </publisher>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <layout>default</layout>
+            <name>MTYTM17452YYZ-snapshots</name>
+            <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+    -->
 
 </project>
