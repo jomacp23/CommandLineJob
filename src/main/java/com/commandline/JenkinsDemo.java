@@ -15,7 +15,7 @@ public class JenkinsDemo {
 
     private static Logger LOGGER = LoggerFactory.getLogger(JenkinsDemo.class);
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         System.out.println("Inicia la ejecucion del Job");
         LOGGER.info("Dar de alta un libro");
         JobDemo jobDemo = JobConfiguration.configJob();

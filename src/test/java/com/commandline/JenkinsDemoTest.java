@@ -7,32 +7,29 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple JenkinsDemo.
  */
-public class JenkinsDemoTest
-    extends TestCase
-{
+public class JenkinsDemoTest extends TestCase {
+
     /**
      * Create the test case
      *
      * @param testName name of the test case
      */
-    public JenkinsDemoTest(String testName )
-    {
+    public JenkinsDemoTest(String testName ) {
         super( testName );
     }
 
     /**
      * @return the suite of tests being tested
      */
-    public static Test suite()
-    {
+    public static Test suite() {
         return new TestSuite( JenkinsDemoTest.class );
     }
 
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
-    {
+    public void testApp() {
         assertTrue( true );
     }
+
 }

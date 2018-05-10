@@ -15,8 +15,6 @@ import org.apache.http.protocol.HttpContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-
 /**
  * Created by jose.m.cruz.perez on 24/02/2017.
  */
@@ -24,7 +22,7 @@ public class JobAuthentication implements HttpRequestInterceptor{
 
     private static Logger LOGGER = LoggerFactory.getLogger(JobAuthentication.class);
 
-    public void process(HttpRequest request, HttpContext context) throws HttpException, IOException {
+    public void process(HttpRequest request, HttpContext context) throws HttpException {
 
         AuthState authState = (AuthState) context.getAttribute(ClientContext.TARGET_AUTH_STATE);
 

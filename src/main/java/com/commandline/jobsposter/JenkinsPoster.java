@@ -32,7 +32,7 @@ public class JenkinsPoster {
     }
 
     @SuppressWarnings("deprecation")
-    public void postJenkinsJob() throws UnsupportedEncodingException {
+    public void postJenkinsJob() {
         System.out.println("---------------------Jenkins Porter--------------------------");
         LOGGER.info("---------------------Jenkins Porter--------------------------");
 
@@ -71,7 +71,6 @@ public class JenkinsPoster {
             System.out.println("---------> " + EntityUtils.toString(entity));
             LOGGER.info("---------> " + EntityUtils.toString(entity));
 
-
             EntityUtils.consume(entity);
         } catch (IOException ioe) {
             System.out.println("Error al configurar informacion ----> " + ioe.getMessage());
@@ -82,4 +81,5 @@ public class JenkinsPoster {
         System.out.println("----------------------------- Jenkins Porter--------------------------------");
         LOGGER.info("----------------------------- Jenkins Porter--------------------------------");
     }
+
 }

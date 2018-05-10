@@ -77,4 +77,5 @@ public class JobDemo {
     public void setParameters(List<NameValuePair> parameters) {
         this.parameters = parameters;
     }
+
 }
