@@ -8,7 +8,8 @@
     <artifactId>CommandLineJob</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-
+    
+    
     <name>CommandLineJob</name>
     <url>http://maven.apache.org</url>
 
